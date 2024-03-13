@@ -1,0 +1,6 @@
+@KreamornLoanTrakerAPI_HostAddress = http://localhost:5032
+
+GET {{KreamornLoanTrakerAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
