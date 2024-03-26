@@ -10,5 +10,6 @@ namespace KreamornLoanTrakerAPI.Models
 
         public DbSet<PersonalDetail> PersonalDetails { get; set; }
         public DbSet<LoanDetail> LoanDetails { get; set; }
+        public DbSet<AdminDetail> AdminDetails { get; set; }
     }
 }

@@ -99,23 +99,6 @@ namespace KreamornLoanTrakerAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/PersonalDetail/AddLoanDetail
-        [HttpPost("AddLoanDetail")]
-        public async Task<ActionResult<LoanDetail>> AddLoanDetail(LoanDetail loanDetail)
-        {
-            _context.LoanDetails.Add(loanDetail);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetLoanDetail", new { id = loanDetail.LoanDeatailId }, loanDetail);
-        }
-
-        // GET: api/PersonalDetail/LoanDetails
-        [HttpGet("LoanDetails")]
-        public async Task<ActionResult<IEnumerable<LoanDetail>>> GetLoanDetails()
-        {
-            return await _context.LoanDetails.ToListAsync();
-        }
-
         private bool PersonalDetailExists(int id)
         {
             return _context.PersonalDetails.Any(e => e.PersonalDetailId == id);
