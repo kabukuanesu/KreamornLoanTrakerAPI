@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KreamornLoanTrakerAPI.Migrations
 {
     [DbContext(typeof(PersonalDetailContext))]
-    [Migration("20240326090143_First Migration")]
+    [Migration("20240327105258_First Migration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace KreamornLoanTrakerAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
