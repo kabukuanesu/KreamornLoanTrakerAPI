@@ -64,28 +64,28 @@ namespace KreamornLoanTrakerAPI.Models
         public string LoanTenure { get; set; } = "";
 
         [Column(TypeName = "varbinary(MAX)")]
-        public required byte[] ProofOfIdentity { get; set; }
+        public byte[]? ProofOfIdentity { get; set; }
 
         [Column(TypeName = "varbinary(MAX)")]
-        public required byte[] ProofOfResidence { get; set; }
+        public byte[]? ProofOfResidence { get; set; }
 
         [Column(TypeName = "varbinary(MAX)")]
-        public required byte[] BankStatement { get; set; }
+        public byte[]? BankStatement { get; set; }
 
         [Column(TypeName = "varbinary(MAX)")]
-        public required byte[] ProofOfIncome { get; set; }
+        public byte[]? ProofOfIncome { get; set; }
 
         [Column(TypeName = "varbinary(MAX)")]
         public byte[]? BenefitDocument { get; set; }
 
         [Column(TypeName = "varbinary(MAX)")]
-        public required byte[] EmploymentVerification { get; set; }
+        public byte[]? EmploymentVerification { get; set; }
 
         [Column(TypeName = "varbinary(MAX)")]
-        public required byte[] CollateralDocument { get; set; }
+        public byte[]? CollateralDocument { get; set; }
 
         [Column(TypeName = "varbinary(MAX)")]
-        public required byte[] OtherDocument { get; set; }
+        public byte[]? OtherDocument { get; set; }
 
         [Column(TypeName ="nvarchar(100)")]
         public string PersonalPassword { get; set; } = "";

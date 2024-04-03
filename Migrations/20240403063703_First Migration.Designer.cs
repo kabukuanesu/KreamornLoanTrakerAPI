@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KreamornLoanTrakerAPI.Migrations
 {
     [DbContext(typeof(PersonalDetailContext))]
-    [Migration("20240327105258_First Migration")]
+    [Migration("20240403063703_First Migration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -121,7 +121,6 @@ namespace KreamornLoanTrakerAPI.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<byte[]>("BankStatement")
-                        .IsRequired()
                         .HasColumnType("varbinary(MAX)");
 
                     b.Property<string>("Benefit")
@@ -132,7 +131,6 @@ namespace KreamornLoanTrakerAPI.Migrations
                         .HasColumnType("varbinary(MAX)");
 
                     b.Property<byte[]>("CollateralDocument")
-                        .IsRequired()
                         .HasColumnType("varbinary(MAX)");
 
                     b.Property<string>("DateOfBirth")
@@ -148,7 +146,6 @@ namespace KreamornLoanTrakerAPI.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<byte[]>("EmploymentVerification")
-                        .IsRequired()
                         .HasColumnType("varbinary(MAX)");
 
                     b.Property<string>("Expense")
@@ -184,7 +181,6 @@ namespace KreamornLoanTrakerAPI.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<byte[]>("OtherDocument")
-                        .IsRequired()
                         .HasColumnType("varbinary(MAX)");
 
                     b.Property<string>("PersonalPassword")
@@ -196,15 +192,12 @@ namespace KreamornLoanTrakerAPI.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<byte[]>("ProofOfIdentity")
-                        .IsRequired()
                         .HasColumnType("varbinary(MAX)");
 
                     b.Property<byte[]>("ProofOfIncome")
-                        .IsRequired()
                         .HasColumnType("varbinary(MAX)");
 
                     b.Property<byte[]>("ProofOfResidence")
-                        .IsRequired()
                         .HasColumnType("varbinary(MAX)");
 
                     b.Property<string>("Title")

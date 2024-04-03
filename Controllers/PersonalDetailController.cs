@@ -99,6 +99,28 @@ namespace KreamornLoanTrakerAPI.Controllers
             return NoContent();
         }
 
+        // POST: api/PersonalDetail/Authenticate
+        [HttpPost("Authenticate")]
+        public async Task<ActionResult<PersonalDetail>> Authenticate(LoginRequest loginRequest)
+        {
+            var personalDetail = await _context.PersonalDetails.FirstOrDefaultAsync(p => p.EmailAddress == loginRequest.EmailAddress && p.PersonalPassword == loginRequest.Password);
+
+            if (personalDetail == null)
+            {
+                return NotFound();
+            }
+
+            // You can perform additional authentication checks if needed
+
+            return personalDetail;
+        }
+
+        public class LoginRequest
+        {
+            public string EmailAddress { get; set; }
+            public string Password { get; set; }
+        }
+
         private bool PersonalDetailExists(int id)
         {
             return _context.PersonalDetails.Any(e => e.PersonalDetailId == id);

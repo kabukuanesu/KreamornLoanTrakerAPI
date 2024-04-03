@@ -99,6 +99,28 @@ namespace KreamornLoanTrakerAPI.Controllers
             return NoContent();
         }
 
+        // POST: api/AdminDetail/Authenticate
+        [HttpPost("Authenticate")]
+        public async Task<ActionResult<AdminDetail>> Authenticate(SigninRequest signinRequest)
+        {
+            var adminDetail = await _context.AdminDetails.FirstOrDefaultAsync(p => p.EcNumber == signinRequest.EcNumber && p.Password == signinRequest.Password);
+
+            if (adminDetail == null)
+            {
+                return NotFound();
+            }
+
+            // You can perform additional authentication checks if needed
+
+            return adminDetail;
+        }
+
+        public class SigninRequest
+        {
+            public string EcNumber { get; set; }
+            public string Password { get; set; }
+        }
+
         private bool AdminDetailExists(int id)
         {
             return _context.AdminDetails.Any(e => e.AdminDetailId == id);
