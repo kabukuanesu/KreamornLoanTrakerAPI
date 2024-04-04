@@ -36,13 +36,12 @@ namespace KreamornLoanTrakerAPI.Migrations
                     FullName = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     EmailAddress = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     NationalId = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    Approved = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     LoanApprovalLetter = table.Column<byte[]>(type: "varbinary(MAX)", nullable: true),
                     DisclosureStatements = table.Column<byte[]>(type: "varbinary(MAX)", nullable: true),
                     RepaymentSchedule = table.Column<byte[]>(type: "varbinary(MAX)", nullable: true),
                     ContactInformation = table.Column<byte[]>(type: "varbinary(MAX)", nullable: true),
-                    DeclinationLetter = table.Column<byte[]>(type: "varbinary(MAX)", nullable: true),
-                    IsApproved = table.Column<bool>(type: "bit", nullable: true),
-                    IsAccepted = table.Column<bool>(type: "bit", nullable: true)
+                    DeclinationLetter = table.Column<byte[]>(type: "varbinary(MAX)", nullable: true)
                 },
                 constraints: table =>
                 {

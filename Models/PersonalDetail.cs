@@ -108,6 +108,9 @@ namespace KreamornLoanTrakerAPI.Models
         [Column(TypeName = "nvarchar(100)")]
         public string NationalId { get; set; } = "";
 
+        [Column(TypeName = "nvarchar(100)")]
+        public string Approved { get; set; } = "";
+
         [Column(TypeName = "varbinary(MAX)")]
         public byte[]? LoanApprovalLetter { get; set;}
 
@@ -123,11 +126,6 @@ namespace KreamornLoanTrakerAPI.Models
         [Column(TypeName = "varbinary(MAX)")]
         public byte[]? DeclinationLetter { get; set;}
 
-        [Column]
-        public bool? IsApproved { get; set; }
-
-        [Column]
-        public bool? IsAccepted { get; set; }
     }
 
     public class AdminDetail
