@@ -121,6 +121,22 @@ namespace KreamornLoanTrakerAPI.Controllers
             public string Password { get; set; }
         }
 
+        // GET: api/PersonalDetail/GetByName/{fullName}
+        [HttpGet("GetByName/{fullName}")]
+        public async Task<ActionResult<IEnumerable<PersonalDetail>>> GetPersonalDetailsByName(string fullName)
+        {
+            var personalDetails = await _context.PersonalDetails
+                .Where(p => p.FullName.Contains(fullName))
+                .ToListAsync();
+
+            if (personalDetails == null || personalDetails.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return personalDetails;
+        }
+
         private bool PersonalDetailExists(int id)
         {
             return _context.PersonalDetails.Any(e => e.PersonalDetailId == id);

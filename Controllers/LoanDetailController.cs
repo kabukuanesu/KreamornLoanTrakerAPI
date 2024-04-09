@@ -99,6 +99,22 @@ namespace KreamornLoanTrakerAPI.Controllers
             return NoContent();
         }
 
+        // GET: api/LoanDetail/NationalId/{nationalId}
+        [HttpGet("NationalId/{nationalId}")]
+        public async Task<ActionResult<IEnumerable<LoanDetail>>> GetLoanDetailsByNationalId(string nationalId)
+        {
+            var loanDetails = await _context.LoanDetails
+                .Where(ld => ld.NationalId == nationalId)
+                .ToListAsync();
+
+            if (loanDetails.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return loanDetails;
+        }
+
         private bool LoanDetailExists(int id)
         {
             return _context.LoanDetails.Any(e => e.LoanDeatailId == id);
